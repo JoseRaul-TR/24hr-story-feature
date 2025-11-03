@@ -1,75 +1,20 @@
-# React + TypeScript + Vite
+# 24hr Story Feature
+Create a client-side instagram stories feature clone.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You are required to build a "Story" feature similar to those found in popular social media platforms like Instagram and WhatsApp. The goal is to allow a user to post short, ephemeral content that disappears after 24 hours. As this is a Frontend project this is going to be client-side only.
 
-Currently, two official plugins are available:
+# Requirements
+There will be a list of stories at the top and a plus button. Clicking the plus button will allow user to upload an image which will be converted to base64 and stored in local storage. The image will be displayed in the list of stories. The image will be removed after 24 hours. User should optionally be able to swipe through the stories.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://assets.roadmap.sh/guest/stories-project.png
 
-## React Compiler
+# Constraints
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+– You can use any frontend framework to build this.
+– Feel free to use any libraries or tools you are comfortable with.
+– The project should be client-side only.
+– The project should be responsive.
+– Image dimensions should be constrained to a maximum of 1080px x 1920px.
 
-Note: This will impact Vite dev & build performances.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+After building this project, you will have a better understanding of how to work with client-side storage, timeouts, and how to create a responsive design.
