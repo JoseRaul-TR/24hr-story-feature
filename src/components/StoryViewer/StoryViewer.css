@@ -1,0 +1,113 @@
+/* src/components/StoryViewer/StoryViewer.css */
+
+/* Full-Screen Overlay for Responsiveness */
+.story-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything */
+  padding: 0;
+  margin: 0;
+}
+
+/* Image Content */
+.story-content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures the image fits within the screen */
+
+  /* Constraint adherence */
+  /* While the image is resized during upload, these CSS rules ensure 
+       it's responsive within the viewport */
+  width: auto;
+  height: auto;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0.8;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 10px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.nav-button:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
+.nav-button:disabled {
+  cursor: default;
+  opacity: 0;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding: 8px 10px 0;
+  z-index: 1001;
+}
+
+.progress-segment-wrapper {
+  flex-grow: 1;
+  height: 3px;
+  margin: 0 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.progress-segment {
+  height: 100%;
+  width: 100%;
+  background-color: white; /* Default state for unviewed segments */
+  transform-origin: left;
+  transition: width 0.1s linear; /* Smooth progress bar movement */
+}
