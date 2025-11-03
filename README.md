@@ -7,8 +7,7 @@ You are required to build a "Story" feature similar to those found in popular so
 ## Requirements
 There will be a list of stories at the top and a plus button. Clicking the plus button will allow user to upload an image which will be converted to base64 and stored in local storage. The image will be displayed in the list of stories. The image will be removed after 24 hours. User should optionally be able to swipe through the stories.
 
-https<img width="1136" height="1790" alt="stories-project" src="https://github.com/user-attachments/assets/b3a21036-81a1-4a0f-8e23-92089a7a9d52" />
-://assets.roadmap.sh/guest/stories-project.png
+<img width="1136" height="1790" alt="stories-project" src="https://github.com/user-attachments/assets/b3a21036-81a1-4a0f-8e23-92089a7a9d52" />
 
 ## Constraints
 
