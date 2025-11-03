@@ -1,0 +1,28 @@
+/* src/components/StoryContainer/StoryContainer.css */
+
+.story-container {
+    padding: 20px;
+}
+
+.story-list-wrapper {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.status-processing {
+    margin-top: 20px;
+    color: orange;
+}
+
+.status-empty {
+    margin-top: 20px;
+    color: #666;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 400px) {
+    .story-container {
+        /* Reduce side padding on very small screens */
+        padding: 10px; 
+    }
+}

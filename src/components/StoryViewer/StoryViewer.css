@@ -99,15 +99,23 @@
   flex-grow: 1;
   height: 3px;
   margin: 0 2px;
-  background-color: rgba(255, 255, 255, 0.4);
   overflow: hidden;
   border-radius: 2px;
 }
 
-.progress-segment {
+.progress-segment-background {
   height: 100%;
   width: 100%;
-  background-color: white; /* Default state for unviewed segments */
+  background-color: rgba(255, 255, 255, 0.4);
+  position: relative;
+  border-radius: 2px;
+}
+
+.progress-segment-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: white; /* The color of the bar that fills up */
   transform-origin: left;
-  transition: width 0.1s linear; /* Smooth progress bar movement */
 }

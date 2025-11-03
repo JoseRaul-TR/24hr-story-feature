@@ -1,9 +1,9 @@
-import "./App.css";
 import { StoryContainer } from "./components/StoryContainer/StoryContainer";
+import "./index.css";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app-root">
       <StoryContainer />
     </div>
   );

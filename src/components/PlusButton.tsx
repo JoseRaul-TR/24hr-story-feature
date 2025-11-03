@@ -1,5 +1,6 @@
 // src/components/PlusButton.tsx
 import React, { useRef } from "react";
+import "./StoryList/StoryList.css";
 
 // Define the component's props
 interface PlusButtonProps {
@@ -26,35 +27,12 @@ export const PlusButton: React.FC<PlusButtonProps> = ({ onImageUpload }) => {
   };
 
   return (
-    <div
-      style={{
-        marginRight: "16px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    <div className="plus-button-container">
       {/* Visual Plus Button/Icon */}
-      <button
-        onClick={handleClick}
-        style={{
-          width: "60px",
-          height: "60px",
-          borderRadius: "50%",
-          backgroundColor: "#ddd",
-          border: "2px solid #ccc",
-          fontSize: "30px",
-          cursor: "pointer",
-          color: "#555",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        title="Add Story"
-      >
+      <button onClick={handleClick} className="plus-button" title="Add Story">
         +
       </button>
-      <span style={{ fontSize: "12px", marginTop: "4px" }}>Add Story</span>
+      <span className="plus-button-label">Add Story</span>
 
       {/* Hidden File Input */}
       <input
@@ -62,7 +40,7 @@ export const PlusButton: React.FC<PlusButtonProps> = ({ onImageUpload }) => {
         accept="image/*"
         ref={fileInputRef}
         onChange={handleChange}
-        style={{ display: "none" }}
+        className="plus-button-input"
       />
     </div>
   );

@@ -3,11 +3,13 @@ import React from "react";
 import type { Story } from "../../types/story";
 import { StoryIcon } from "../StoryIcon";
 import { PlusButton } from "../PlusButton";
+import "./StoryList.css";
 
 interface StoryListProps {
   stories: Story[];
   onImageUpload: (file: File) => void;
   onStoryClick: (storyId: string) => void;
+  hasBeenViewed: (storyId: string) => boolean;
 }
 
 // NOTE: This assumes StoryContainer now renders the PlusButton separately,
@@ -17,22 +19,10 @@ export const StoryList: React.FC<StoryListProps> = ({
   stories,
   onImageUpload,
   onStoryClick,
+  hasBeenViewed,
 }) => {
-  // In a real app, you'd track viewed IDs in local storage
-  const viewedStoryIds = new Set<string>(); // Placeholder: assume none viewed for now
-
   return (
-    <div
-      style={{
-        display: "flex",
-        overflowX: "auto",
-        padding: "10px 0",
-        width: "100%",
-        // Ensure scrollbar is hidden but scrolling is possible for mobile responsiveness
-        scrollbarWidth: "none", // Firefox
-        msOverflowStyle: "none", // IE and Edge
-      }}
-    >
+    <div className="story-list">
       {/* 1. Add Story Button */}
       <PlusButton onImageUpload={onImageUpload} />
 
@@ -41,7 +31,7 @@ export const StoryList: React.FC<StoryListProps> = ({
         <StoryIcon
           key={story.id}
           story={story}
-          hasBeenViewed={viewedStoryIds.has(story.id)}
+          hasBeenViewed={hasBeenViewed(story.id)}
           onClick={onStoryClick}
         />
       ))}

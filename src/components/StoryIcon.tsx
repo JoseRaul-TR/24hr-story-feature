@@ -1,6 +1,7 @@
 // src/components/StoryIcon.tsx
 import React from "react";
 import type { Story } from "../types/story";
+import "./StoryList/StoryList.css";
 
 interface StoryIconProps {
   story: Story;
@@ -14,57 +15,25 @@ export const StoryIcon: React.FC<StoryIconProps> = ({
   onClick,
 }) => {
   // Use a temporary style for the circle border based on viewed status
-  const borderColor = hasBeenViewed ? "#ccc" : "#E1306C"; // Grey for viewed, Instagram Pink for unviewed
+  const borderColor = hasBeenViewed
+    ? "#ccc"
+    : "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)";
 
   const handleClick = () => {
     onClick(story.id);
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        marginRight: "16px",
-        cursor: "pointer",
-      }}
-      onClick={handleClick}
-    >
-      <div
-        style={{
-          width: "64px",
-          height: "64px",
-          borderRadius: "50%",
-          padding: "2px", // Space for the border effect
-          background: `linear-gradient(45deg, ${borderColor}, ${borderColor})`,
-        }}
-      >
+    <div className="story-icon-container" onClick={handleClick}>
+      <div className="story-icon-border" style={{ background: borderColor }}>
         {/* Story Image */}
         <img
           src={story.base64Image}
           alt={`Story from ${story.id}`}
-          style={{
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            objectFit: "cover",
-            border: "2px solid white", // Inner white border for contrast
-          }}
+          className="story-icon-image"
         />
       </div>
-      <span
-        style={{
-          fontSize: "10px",
-          marginTop: "4px",
-          maxWidth: "64px",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap",
-        }}
-      >
-        Story
-      </span>
+      <span className="story-icon-label">Story</span>
     </div>
   );
 };
